@@ -9,7 +9,11 @@ window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 
-require('bootstrap-sass');
+// if you want all features of foundation
+require('foundation-sites');
+
+// window.$ = window.jQuery = require('jquery');
+$(document).foundation();
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
