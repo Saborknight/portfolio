@@ -12,9 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	$links = [
+		'projects' => url('/projects'),
+		'facebook' => 'https://facebook.com/Saborknight',
+		'github' => 'https://github.com/Saborknight/portfolio'
+	];
+
+    return view('welcome', compact('links'));
 });
 
 Route::get('/projects', function() {
-	return view('projects');
+	$projects = [
+		'A bunch of projects',
+		'will eventually be displayed here.'
+	];
+
+	return view('projects', compact('projects'));
 });
