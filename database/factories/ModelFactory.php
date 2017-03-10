@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(App\Author::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -21,4 +21,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
     ];
+});
+
+$factory->define(App\Project::class, function (Faker\Generator $faker) {
+
+	return [
+		'name' => $faker->sentence,
+		'author_id' => $faker->author_id,
+		'client_id' => $faker->client_id,
+		'body' => $faker->paragraphs,
+		'media_id' => $faker->image,
+
+	];
 });
