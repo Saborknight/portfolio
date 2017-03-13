@@ -29,3 +29,7 @@ Route::get('/projects', function() {
 
 	return view('projects', compact('projects'));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
