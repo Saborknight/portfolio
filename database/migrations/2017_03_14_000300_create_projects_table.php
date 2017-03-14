@@ -17,6 +17,8 @@ class CreateProjectsTable extends Migration
 			$table->increments('id');
 			$table->string('name');
 			$table->text('body');
+			$table->date('start_date')->default(NOW());
+			$table->date('end_date')->nullable();
 			$table->timestamps();
 		});
 	}

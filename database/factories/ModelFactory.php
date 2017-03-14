@@ -27,6 +27,8 @@ $factory->define(App\Project::class, function (Faker\Generator $faker) {
 
 	return [
 		'name' => $faker->sentence,
-		'body' => $faker->paragraphs
+		'body' => $faker->paragraphs,
+		'start_date' => $faker->date()->dateTimeThisCentury,
+		'end_date' => $faker->date()->dateTimeThisCentury
 	];
 });
