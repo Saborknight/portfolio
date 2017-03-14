@@ -18,7 +18,7 @@ Route::get('/', function () {
 		'github' => 'https://github.com/Saborknight/portfolio'
 	];
 
-    return view('welcome', compact('links'));
+	return view('welcome', compact('links'));
 });
 
 Route::get('/projects', function() {

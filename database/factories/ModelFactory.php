@@ -13,24 +13,20 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Author::class, function (Faker\Generator $faker) {
-    static $password;
+	static $password;
 
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
+	return [
+		'name' => $faker->name,
+		'email' => $faker->unique()->safeEmail,
+		'password' => $password ?: $password = bcrypt('secret'),
+		'remember_token' => str_random(10),
+	];
 });
 
 $factory->define(App\Project::class, function (Faker\Generator $faker) {
 
 	return [
 		'name' => $faker->sentence,
-		'author_id' => $faker->author_id,
-		'client_id' => $faker->client_id,
-		'body' => $faker->paragraphs,
-		'media_id' => $faker->image,
-
+		'body' => $faker->paragraphs
 	];
 });
