@@ -26,9 +26,19 @@ $factory->define(App\Author::class, function (Faker\Generator $faker) {
 $factory->define(App\Project::class, function (Faker\Generator $faker) {
 
 	return [
-		'name' => $faker->sentence,
-		'body' => $faker->paragraphs,
-		'start_date' => $faker->date()->dateTimeThisCentury,
-		'end_date' => $faker->date()->dateTimeThisCentury
+		'name' => $faker->sentence(5),
+		'body' => $faker->paragraph,
+		'start_date' => $faker->date(),
+		'end_date' => $faker->date()
+	];
+});
+
+$factory->define(App\ProjectFeedback::class, function (Faker\Generator $faker) {
+	return [
+		'project_id' => rand(1,12),
+		'title' => $faker->sentence(6),
+		'body' => $faker->paragraph,
+		'satisfaction' => $faker->randomDigit,
+		'state' => $faker->word
 	];
 });
