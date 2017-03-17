@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAuthorsTable extends Migration
+class CreateCategoriesTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -13,14 +13,10 @@ class CreateAuthorsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('authors', function (Blueprint $table) {
+		Schema::create('categories', function (Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
-			$table->string('email')->unique();
-			$table->string('password');
-			$table->string('avatar')->nullable();
-			$table->rememberToken();
-			$table->timestamps();
+			$table->string('name')->unique();
+			$table->string('color')->nullable();
 		});
 	}
 
@@ -31,6 +27,6 @@ class CreateAuthorsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('authors');
+		Schema::dropIfExists('categories');
 	}
 }

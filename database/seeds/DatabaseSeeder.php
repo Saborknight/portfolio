@@ -8,7 +8,7 @@ class DatabaseSeeder extends Seeder
 	/**
 	 * Truncate the databases before seeding new data
 	 */
-	protected $toTruncate = ['authors','projects','project_feedbacks'];
+	protected $toTruncate = ['authors', 'author_project', 'categories', 'category_project', 'clients','projects','project_feedbacks'];
 
 	/**
 	 * Run the database seeds.
@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
 		}
 
 		$this->call(AuthorTableSeeder::class);
+		$this->call(CategoryTableSeeder::class);
+		$this->call(ClientTableSeeder::class);
 		$this->call(ProjectTableSeeder::class);
 		$this->call(ProjectFeedbackTableSeeder::class);
 

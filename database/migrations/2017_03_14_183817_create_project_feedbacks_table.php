@@ -16,7 +16,7 @@ class CreateProjectFeedbacksTable extends Migration
 		Schema::create('project_feedbacks', function (Blueprint $table) {
 			$table->increments('id');
 			$table->integer('project_id');
-			// $table->integer('client_id');
+			$table->integer('client_id');
 			$table->string('title');
 			$table->text('body')->nullable();
 			$table->integer('satisfaction')->default(0);

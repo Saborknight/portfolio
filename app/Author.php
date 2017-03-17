@@ -28,6 +28,6 @@ class Author extends Authenticatable
 	];
 
 	function projects() {
-		return $this->hasMany(Project::class);
+		return $this->belongsToMany(Project::class);
 	}
 }
