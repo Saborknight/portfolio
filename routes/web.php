@@ -18,17 +18,12 @@ Route::get('/', function () {
 		'github' => 'https://github.com/Saborknight/portfolio'
 	];
 
-    return view('welcome', compact('links'));
+	return view('index', compact('links'));
 });
 
-Route::get('/projects', function() {
-	$projects = [
-		'A bunch of projects',
-		'will eventually be displayed here.'
-	];
+Route::get('/projects', 'ProjectsController@index');
 
-	return view('projects', compact('projects'));
-});
+Route::get('/projects/{project}', 'ProjectsController@show');
 
 Auth::routes();
 
