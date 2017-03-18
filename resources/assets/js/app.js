@@ -13,8 +13,17 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-	el: '#app'
+// const app = new Vue({
+// 	el: '#app'
+// });
+
+var $j = jQuery.noConflict();
+
+$j(document).ready(function() {
+	$j('#menu-toggle').click(function(e) {
+		e.preventDefault();
+		$j('#app').toggleClass('toggled');
+	});
 });

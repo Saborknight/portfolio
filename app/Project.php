@@ -24,7 +24,12 @@ class Project extends Model
 	}
 
 	public function getRouteKeyName() {
+		/**
+		 * Decide when to use the generated permalink or when to use the ID
+		 * @return string keyname for reference
+		 */
 		$route = \Request::route()->getName();
+
 		if ($route == 'projects.single') {
 			$keyName = 'permalink';
 		} else {

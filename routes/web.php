@@ -12,15 +12,9 @@
 */
 
 // Public routes
-Route::get('/', function () {
-	$links = [
-		'projects' => url('/projects'),
-		'facebook' => 'https://facebook.com/Saborknight',
-		'github' => 'https://github.com/Saborknight/portfolio'
-	];
+Route::get('/', 'InformationController@index')->name('index');
 
-	return view('index', compact('links'));
-});
+Route::get('/about', 'InformationController@about')->name('about');
 
 Route::group(['prefix' => 'projects'], function() {
 
@@ -35,4 +29,4 @@ Route::group(['prefix' => 'projects'], function() {
 // All authenticated routes
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
