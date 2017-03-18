@@ -11,6 +11,7 @@
 |
 */
 
+// Public routes
 Route::get('/', function () {
 	$links = [
 		'projects' => url('/projects'),
@@ -21,10 +22,17 @@ Route::get('/', function () {
 	return view('index', compact('links'));
 });
 
-Route::get('/projects', 'ProjectsController@index');
+Route::group(['prefix' => 'projects'], function() {
 
-Route::get('/projects/{project}', 'ProjectsController@show');
+	Route::get('/', 'ProjectsController@index')->name('projects');
 
+	Route::get('/{project}', 'ProjectsController@single')->name('projects.single');
+
+	Route::get('/{project}/store', 'ProjectsController@store')->name('projects.store');
+
+});
+
+// All authenticated routes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
