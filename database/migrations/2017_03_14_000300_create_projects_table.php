@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
 			$table->string('state')->default('drafted');
 			$table->date('start_date')->default(date("Y-m-d H:i:s"));
 			$table->date('end_date')->nullable();
+			$table->string('permalink');
 			$table->timestamps();
 		});
 	}

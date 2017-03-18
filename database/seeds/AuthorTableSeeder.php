@@ -12,7 +12,8 @@ class AuthorTableSeeder extends Seeder
 	public function run()
 	{
 		factory(App\Author::class, 3)->create()->each(function($a) {
-			$a->projects()->saveMany(factory(App\Project::class, 4)->make());
+			$a->projects()->saveMany(
+				factory(App\Project::class, 4)->make());
 		});
 	}
 }
