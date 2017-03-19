@@ -45,6 +45,15 @@ body {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+
+	.caret {
+		transition: all 0.5s ease;
+		transform: rotateZ(-90deg);
+	}
+
+	.open.dropdown .caret {
+		transform: rotateZ(0deg);
+	}
 }
 
 .menu-nav li {
@@ -67,6 +76,42 @@ body {
 .menu-nav li a:active,
 .menu-nav li a:focus {
 	text-decoration: none;
+}
+
+.menu-nav ul {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+
+	&.dropdown-menu > li > a {
+		padding: 0;
+		line-height: 40px;
+
+		&:hover, &:active, &:focus {
+			color: $white-light;
+			background: $grey;
+		}
+	}
+}
+
+// Dropdown animation
+.dropdown .dropdown-menu {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+
+	max-height: 0;
+	display: block;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+	max-height: 3em;
+	opacity: 1;
 }
 
 .menu-nav > .menu-brand {

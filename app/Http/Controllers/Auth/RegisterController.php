@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Author;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersAuthors;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -20,7 +20,7 @@ class RegisterController extends Controller
 	|
 	*/
 
-	use RegistersAuthors;
+	use RegistersUsers;
 
 	/**
 	 * Where to redirect authors after registration.
