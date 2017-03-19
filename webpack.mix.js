@@ -31,6 +31,11 @@ mix.webpackConfig( {
 
 mix.js('resources/assets/js/app.js', 'public/js')
 	.sass('resources/assets/sass/app.scss', 'public/css')
+	.options({
+		postCss: [
+			require('autoprefixer')()
+		]
+	})
 	.copy('resources/assets/*.*', 'public')
 	.copy('resources/assets/img', 'public/img')
 	.browserSync({
