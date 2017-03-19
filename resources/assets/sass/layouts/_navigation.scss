@@ -25,7 +25,7 @@ body {
 	height: 100%;
 	margin-left: -250px;
 	overflow-y: auto;
-	background: rgba(#000, 0.95);
+	background: $grey-dark;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
@@ -55,13 +55,13 @@ body {
 .menu-nav li a {
 	display: block;
 	text-decoration: none;
-	color: #999999;
+	color: $white;
 }
 
 .menu-nav li a:hover {
 	text-decoration: none;
-	color: $btn-default-color;
-	background: rgba(255,255,255,0.2);
+	color: $white-light;
+	background: $grey;
 }
 
 .menu-nav li a:active,
@@ -76,11 +76,11 @@ body {
 
 .menu-nav > .menu-brand a {
 	padding: 1em 0;
-	color: #999999;
+	color: $white-light;
 }
 
 .menu-nav > .menu-brand a:hover {
-	color: #fff;
+	color: $white-light;
 	background: none;
 }
 
@@ -101,16 +101,12 @@ body {
 	transition: all 0.5s ease;
 	z-index: 2000;
 
-	&:hover, &:active, &:focus {
-		background-color: transparent;
-	}
-
 	.icon-bar {
 		display: block;
 		width: 30px;
 		height: 2px;
-		border-radius: 1px;
-		background-color: $btn-default-color;
+		border-radius: 3px;
+		background-color: $white-light;
 		transition: all 0.5s ease;
 
 		& + .icon-bar {

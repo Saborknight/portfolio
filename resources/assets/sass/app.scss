@@ -9,15 +9,8 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-// I hate border radius on everything...
-*,
-.form-control,
-.btn,
-.navbar-toggle {
-	border-radius: 0;
-}
-
 // My Stuff
+@import "common";
 @import "elements/login";
 @import "layouts/navigation";
 @import "layouts/content";
