@@ -61,6 +61,10 @@ class Project extends Model
 			$query->whereYear('start_date', $year);
 		}
 
+		/**
+		 * Filter by the categories in the GET request
+		 * @return $query returns to the main query with the relevant post ids for the category
+		 */
 		if ($category = $filters['category']) {
 			$category_id = Category::where('name', $category)->pluck('id')->first();
 			$posts = Category::find($category_id)->projects;

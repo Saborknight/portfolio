@@ -22,6 +22,25 @@ require('./bootstrap');
 var $j = jQuery.noConflict();
 
 $j(document).ready(function() {
+	/**
+	 * Make sure sidebar (if exists) stretches to the full extent
+	 * of the la... I mean document
+	 */
+	if ($('#timeline-wrapper').length > 0) {
+		var height = $j(document).height();
+
+		$('#timeline-wrapper, .timeline').addClass('no-transition');
+
+		$('#timeline-wrapper, .timeline').css('height', height);
+
+		$('#timeline-wrapper, .timeline').removeClass('no-transition');
+
+		console.log('Timeline found!', height);
+	}
+
+	/**
+	 * Toggle the main navigation menu on the left
+	 */
 	$j('#menu-toggle').click(function(e) {
 		e.preventDefault();
 		$j('#menu-wrapper').toggleClass('toggled');
@@ -43,5 +62,12 @@ $j(document).ready(function() {
 			$j('#menu-toggle').addClass('drop-bars');
 			$j('#menu-wrapper').removeClass('toggled');
 		}
+	});
+
+	/**
+	 * Toggle the sidebar menu on the right on hover
+	 */
+	$j('#timeline-wrapper').hover(function() {
+		$(this).toggleClass('hovered');
 	});
 });

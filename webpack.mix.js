@@ -37,7 +37,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
 		]
 	})
 	.copy('resources/assets/*.*', 'public')
-	.copy('resources/assets/img', 'public/img')
+	.copy('resources/assets/img', 'public/images')
 	.browserSync({
 		proxy: '127.0.0.1:8000'
 	});

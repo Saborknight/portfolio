@@ -3,10 +3,9 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
-body {
-	overflow-x: hidden;
-}
+//////////////////////
+// Main Nav Sidebar //
+//////////////////////
 
 /* Toggle Styles */
 
@@ -26,9 +25,6 @@ body {
 	margin-left: -250px;
 	overflow-y: auto;
 	background: $grey-dark;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
 
@@ -171,13 +167,87 @@ body {
 	}
 }
 
+///////////////////////////////
+// Projects Timeline Sidebar //
+///////////////////////////////
+
+#timeline-wrapper {
+	$position: 300px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: initial;
+	right: $position;
+	width: 100%;
+	margin-right: -$position;
+	overflow-x: hidden;
+	transition: all 0.5s ease;
+
+	&.hovered {
+		width: 100%;
+	}
+}
+
+.timeline {
+	$position: 300px;
+	@extend #menu-wrapper;
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	float: right;
+	width: 100rem;
+	height: auto;
+	margin: 0;
+	padding-top: 3em;
+	overflow-y: visible;
+
+	.timeline-list {
+		@extend .menu-nav;
+		position: relative;
+		text-align: right;
+	}
+
+	.timeline-header {
+		float: right;
+		text-align: center;
+
+		h1, h2, h3, h4, h5, h6 {
+			display: block;
+			margin: 0;
+			margin-bottom: 0.4em;
+			text-indent: 0;
+		}
+	}
+
+	.timeline-link {
+		padding-top: 1em;
+		padding-bottom: 1em;
+
+		span {
+			position: relative;
+			top: -50%;
+			left: 0;
+			transform: translateY(50%);
+			margin-right: 1em;
+		}
+
+		.timeline-category {
+			margin-right: 1em;
+			float: right;
+			border-radius: 20px;
+			border: 20px solid $brand-primary;
+		}
+	}
+}
+
+////////////////////////////
+// Media Queries for all! //
+////////////////////////////
+
 @media(min-width:768px) {
 	#app {
 		padding-left: 0;
-	}
-
-	#menu-wrapper {
-		width: 0;
 	}
 
 	.toggled#menu-wrapper {
@@ -191,6 +261,22 @@ body {
 			left: 95%;
 			left: calc(25% - 66px);
 		}
+	}
+
+	.timeline-header {
+		text-align: center;
+	}
+
+	#timeline-wrapper, .timeline-header {
+		width: calc(2em + 40px);
+	}
+
+	.hovered#timeline-wrapper {
+		width: 25%;
+	}
+
+	#timeline-wrapper {
+		display: block;
 	}
 }
 
