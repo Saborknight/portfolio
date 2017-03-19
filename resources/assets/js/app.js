@@ -24,6 +24,24 @@ var $j = jQuery.noConflict();
 $j(document).ready(function() {
 	$j('#menu-toggle').click(function(e) {
 		e.preventDefault();
-		$j('#app').toggleClass('toggled');
+		$j('#menu-wrapper').toggleClass('toggled');
+		// Bars begin down
+		$j('#menu-toggle').toggleClass('drop-bars');
+
+		if ( $('#menu-toggle').prop('class') !== 'move-right') {
+			// Move-right!
+			setTimeout(function() {
+				$('#menu-toggle').toggleClass('move-right');
+
+				setTimeout(function() {
+					// Bars down
+					$('#menu-toggle').toggleClass('drop-bars');
+				},500);
+			}, 500);
+		} else {
+			$j('#menu-toggle').removeClass('move-right');
+			$j('#menu-toggle').addClass('drop-bars');
+			$j('#menu-wrapper').removeClass('toggled');
+		}
 	});
 });

@@ -11,15 +11,10 @@ body {
 /* Toggle Styles */
 
 #app {
-	padding-left: 0;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-}
-
-#app.toggled {
-	padding-left: 250px;
 }
 
 #menu-wrapper {
@@ -30,26 +25,15 @@ body {
 	height: 100%;
 	margin-left: -250px;
 	overflow-y: auto;
-	background: #000;
+	background: rgba(#000, 0.95);
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
 
-#app.toggled #menu-wrapper {
-	width: 250px;
-}
-
-#page-content-wrapper {
+.toggled#menu-wrapper {
 	width: 100%;
-	position: absolute;
-	padding: 15px;
-}
-
-#app.toggled #page-content-wrapper {
-	position: absolute;
-	margin-right: -250px;
 }
 
 /* menu Styles */
@@ -57,7 +41,7 @@ body {
 .menu-nav {
 	position: absolute;
 	top: 0;
-	width: 250px;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -76,7 +60,7 @@ body {
 
 .menu-nav li a:hover {
 	text-decoration: none;
-	color: #fff;
+	color: $btn-default-color;
 	background: rgba(255,255,255,0.2);
 }
 
@@ -86,12 +70,12 @@ body {
 }
 
 .menu-nav > .menu-brand {
-	height: 65px;
 	font-size: 18px;
 	line-height: 60px;
 }
 
 .menu-nav > .menu-brand a {
+	padding: 1em 0;
 	color: #999999;
 }
 
@@ -100,32 +84,81 @@ body {
 	background: none;
 }
 
+.menu-nav .logo {
+	width: auto;
+	height: 3em;
+}
+
+/* Toggle button */
+#menu-toggle {
+	position: absolute;
+	left: 0;
+	margin: 8px 0;
+	padding: 9px 18px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	transition: all 0.5s ease;
+	z-index: 2000;
+
+	&:hover, &:active, &:focus {
+		background-color: transparent;
+	}
+
+	.icon-bar {
+		display: block;
+		width: 30px;
+		height: 2px;
+		border-radius: 1px;
+		background-color: $btn-default-color;
+		transition: all 0.5s ease;
+
+		& + .icon-bar {
+			margin-top: -2px;
+		}
+	}
+
+	&.move-right {
+		left: 95%;
+		left: calc(100% - 66px);
+	}
+
+	&.drop-bars {
+		.icon-bar:not(:first-of-type) {
+			margin-top: 6px;
+		}
+	}
+}
+
 @media(min-width:768px) {
 	#app {
 		padding-left: 0;
-	}
-
-	#app.toggled {
-		padding-left: 250px;
 	}
 
 	#menu-wrapper {
 		width: 0;
 	}
 
-	#app.toggled #menu-wrapper {
-		width: 250px;
+	.toggled#menu-wrapper {
+		width: 25%;
 	}
 
-	#page-content-wrapper {
-		padding: 20px;
-		position: relative;
-	}
+	#menu-toggle {
+		position: fixed;
 
-	#app.toggled #page-content-wrapper {
-		position: relative;
-		margin-right: 0;
+		&.move-right {
+			left: 95%;
+			left: calc(25% - 66px);
+		}
 	}
 }
 
 /* Super subtle login button for my eyes only... for now */
+.link-login {
+	color: #444;
+
+	&:hover, &:focus, &:active {
+		color: lighten(#444, 15%);
+		text-decoration: none;
+	}
+}
