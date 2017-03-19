@@ -197,7 +197,6 @@
 	right: 0;
 	float: right;
 	width: 100rem;
-	height: auto;
 	margin: 0;
 	padding-top: 3em;
 	overflow-y: visible;
@@ -239,6 +238,40 @@
 			border: 20px solid $brand-primary;
 		}
 	}
+}
+
+//////////////////////////
+// Back/Forward Buttons //
+//////////////////////////
+
+.go-back-wrapper, .go-forward-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1em 0;
+	padding: 0 1.2em;
+	z-index: 4000;
+}
+
+.go-back, .go-forward {
+	@extend .glyphicon;
+	padding: 0.7em;
+	border: 1px solid $brand-primary;
+	border-radius: 2px;
+	transition: all 0.2s ease;
+
+	&:hover, &:active, &:focus {
+		background-color: $brand-primary;
+		color: $grey;
+	}
+}
+
+.go-back {
+	@extend .glyphicon-chevron-left;
+}
+
+.go-forward {
+	@extend .glyphicon-chevron-right;
 }
 
 ////////////////////////////

@@ -28,6 +28,9 @@ $j(document).ready(function() {
 	 */
 	if ($('#timeline-wrapper').length > 0) {
 		var height = $j(document).height();
+		var extension = parseFloat($j('body').css('font-size')) * 3;
+
+		var height = height + extension;
 
 		$('#timeline-wrapper, .timeline').addClass('no-transition');
 
@@ -35,7 +38,7 @@ $j(document).ready(function() {
 
 		$('#timeline-wrapper, .timeline').removeClass('no-transition');
 
-		console.log('Timeline found!', height);
+		console.log('Timeline found!', height, extension);
 	}
 
 	/**

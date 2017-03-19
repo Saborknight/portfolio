@@ -31,12 +31,16 @@
 						<img class="logo" src="{{ URL::asset('/images/logo.svg') }}" alt="Brink Creative: logo" height="200" width="200">
 					</a>
 				</li>
-				<?php $controller = new App\Http\Controllers\Controller; ?>
+				@php
+					$controller = new App\Http\Controllers\Controller;
+				@endphp
+
 				@foreach ($controller->getMenuItems() as $name => $url)
 					<li>
 						<a href="{{ $url }}">{{ ucwords($name) }}</a>
 					</li>
 				@endforeach
+
 				@if (Auth::check())
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -65,6 +69,10 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
+
+		{{-- <div class="go-back-wrapper">
+			<a href="{{ URL::previous() }}"><i class="go-back"></i></a>
+		</div> --}}
 
 		<main class="content">
 			@yield('content')
@@ -107,7 +115,6 @@
 				<div class="col-sm-12">
 					@if (Auth::guest())
 						<a class="link-login" href="{{ route('login') }}">Login</a>
-					@else
 					@endif
 				</div>
 			</div>
