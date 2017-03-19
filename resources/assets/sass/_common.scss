@@ -1,0 +1,27 @@
+// I hate border radius on everything...
+*,
+.form-control,
+.btn,
+.navbar-toggle,
+.dropdown-menu {
+	border-radius: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-image: url(../img/bg-texture.png);
+	background-size: 300px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $white-light;
+}
+
+// In case doing stuff with JS, don't let the animations show
+// What I'm doing!
+.no-transition {
+	transition: none !important;
+}

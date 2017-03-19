@@ -1,0 +1,8 @@
+.panel {
+	background-color: inherit;
+	border: none;
+
+	&.panel-default > .panel-heading {
+		color: inherit;
+	}
+}

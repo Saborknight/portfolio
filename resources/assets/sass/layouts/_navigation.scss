@@ -1,0 +1,324 @@
+/*!
+ * Start Bootstrap - Simple menu (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+//////////////////////
+// Main Nav Sidebar //
+//////////////////////
+
+/* Toggle Styles */
+
+#app {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#menu-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 250px;
+	width: 0;
+	height: 100%;
+	margin-left: -250px;
+	overflow-y: auto;
+	background: $grey-dark;
+	transition: all 0.5s ease;
+}
+
+.toggled#menu-wrapper {
+	width: 100%;
+}
+
+/* menu Styles */
+
+.menu-nav {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	.caret {
+		transition: all 0.5s ease;
+		transform: rotateZ(-90deg);
+	}
+
+	.open.dropdown .caret {
+		transform: rotateZ(0deg);
+	}
+}
+
+.menu-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+}
+
+.menu-nav li a {
+	display: block;
+	text-decoration: none;
+	color: $white;
+}
+
+.menu-nav li a:hover {
+	text-decoration: none;
+	color: $white-light;
+	background: $grey;
+}
+
+.menu-nav li a:active,
+.menu-nav li a:focus {
+	text-decoration: none;
+}
+
+.menu-nav ul {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+
+	&.dropdown-menu > li > a {
+		padding: 0;
+		line-height: 40px;
+
+		&:hover, &:active, &:focus {
+			color: $white-light;
+			background: $grey;
+		}
+	}
+}
+
+// Dropdown animation
+.dropdown .dropdown-menu {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+
+	max-height: 0;
+	display: block;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+	max-height: 3em;
+	opacity: 1;
+}
+
+.menu-nav > .menu-brand {
+	font-size: 18px;
+	line-height: 60px;
+}
+
+.menu-nav > .menu-brand a {
+	padding: 1em 0;
+	color: $white-light;
+}
+
+.menu-nav > .menu-brand a:hover {
+	color: $white-light;
+	background: none;
+}
+
+.menu-nav .logo {
+	width: auto;
+	height: 3em;
+}
+
+/* Toggle button */
+#menu-toggle {
+	position: absolute;
+	left: 0;
+	margin: 8px 0;
+	padding: 9px 18px;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid transparent;
+	transition: all 0.5s ease;
+	z-index: 2000;
+
+	.icon-bar {
+		display: block;
+		width: 30px;
+		height: 2px;
+		border-radius: 3px;
+		background-color: $white-light;
+		transition: all 0.5s ease;
+
+		& + .icon-bar {
+			margin-top: -2px;
+		}
+	}
+
+	&.move-right {
+		left: 95%;
+		left: calc(100% - 66px);
+	}
+
+	&.drop-bars {
+		.icon-bar:not(:first-of-type) {
+			margin-top: 6px;
+		}
+	}
+}
+
+///////////////////////////////
+// Projects Timeline Sidebar //
+///////////////////////////////
+
+#timeline-wrapper {
+	$position: 300px;
+	display: none;
+	position: absolute;
+	top: 0;
+	left: initial;
+	right: $position;
+	width: 100%;
+	margin-right: -$position;
+	overflow-x: hidden;
+	transition: all 0.5s ease;
+
+	&.hovered {
+		width: 100%;
+	}
+}
+
+.timeline {
+	$position: 300px;
+	@extend #menu-wrapper;
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	float: right;
+	width: 100rem;
+	margin: 0;
+	padding-top: 3em;
+	overflow-y: visible;
+
+	.timeline-list {
+		@extend .menu-nav;
+		position: relative;
+		text-align: right;
+	}
+
+	.timeline-header {
+		float: right;
+		text-align: center;
+
+		h1, h2, h3, h4, h5, h6 {
+			display: block;
+			margin: 0;
+			margin-bottom: 0.4em;
+			text-indent: 0;
+		}
+	}
+
+	.timeline-link {
+		padding-top: 1em;
+		padding-bottom: 1em;
+
+		span {
+			position: relative;
+			top: -50%;
+			left: 0;
+			transform: translateY(50%);
+			margin-right: 1em;
+		}
+
+		.timeline-category {
+			margin-right: 1em;
+			float: right;
+			border-radius: 20px;
+			border: 20px solid $brand-primary;
+		}
+	}
+}
+
+//////////////////////////
+// Back/Forward Buttons //
+//////////////////////////
+
+.go-back-wrapper, .go-forward-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1em 0;
+	padding: 0 1.2em;
+	z-index: 4000;
+}
+
+.go-back, .go-forward {
+	@extend .glyphicon;
+	padding: 0.7em;
+	border: 1px solid $brand-primary;
+	border-radius: 2px;
+	transition: all 0.2s ease;
+
+	&:hover, &:active, &:focus {
+		background-color: $brand-primary;
+		color: $grey;
+	}
+}
+
+.go-back {
+	@extend .glyphicon-chevron-left;
+}
+
+.go-forward {
+	@extend .glyphicon-chevron-right;
+}
+
+////////////////////////////
+// Media Queries for all! //
+////////////////////////////
+
+@media(min-width:768px) {
+	#app {
+		padding-left: 0;
+	}
+
+	.toggled#menu-wrapper {
+		width: 25%;
+	}
+
+	#menu-toggle {
+		position: fixed;
+
+		&.move-right {
+			left: 95%;
+			left: calc(25% - 66px);
+		}
+	}
+
+	.timeline-header {
+		text-align: center;
+	}
+
+	#timeline-wrapper, .timeline-header {
+		width: calc(2em + 40px);
+	}
+
+	.hovered#timeline-wrapper {
+		width: 25%;
+	}
+
+	#timeline-wrapper {
+		display: block;
+	}
+}
+
+/* Super subtle login button for my eyes only... for now */
+.link-login {
+	color: #444;
+
+	&:hover, &:focus, &:active {
+		color: lighten(#444, 15%);
+		text-decoration: none;
+	}
+}

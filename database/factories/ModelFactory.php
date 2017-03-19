@@ -33,8 +33,15 @@ $factory->define(App\Category::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Project::class, function (Faker\Generator $faker) {
 
+	$name = $faker->sentence(rand(1,10));
+	$regex = "/[[:space:][:punct:]]/";
+	$permalink = trim($name, " \t\n\r\0\x0B.&+/*,-");
+	$permalink = preg_replace($regex, '-', $permalink);
+	$permalink = strtolower($permalink);
+
 	return [
-		'name' => $faker->sentence(5),
+		'permalink' => $permalink,
+		'name' => $name,
 		'body' => $faker->paragraph,
 		'state' => $faker->randomElement(['drafted', 'published', 'archived']),
 		'start_date' => $faker->date(),
