@@ -9,6 +9,9 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+// Github Markdown CSS
+@import "elements/markdown";
+
 // My Stuff
 @import "common";
 @import "elements/login";

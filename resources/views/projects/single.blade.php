@@ -29,18 +29,18 @@
 					'/(http:\/\/|https:\/\/|)(player.|www.)?(vimeo\.com)\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/',
 					$project->featured))
 
-					<div class="featured-project"><iframe src="{{ $project->featured }}" alt="{{ $project->name }}" width="1280" height="720" frameborder="0"></iframe></div>
+					<div class="featured-video-project"><iframe src="{{ $project->featured }}" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
 				{{-- Show us Youtube! --}}
 				@elseif (preg_match(
 					'/(http:\/\/|https:\/\/|)(player.|www.)?(youtu(be\.com|\.be|be\.googleapis\.com))\/(video\/|embed\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/',
 					$project->featured))
 
-					<div class="featured-project"><iframe src="{{ $project->featured }}" alt="{{ $project->name }}" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
+					<div class="featured-video-project"><iframe src="{{ $project->featured }}" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
 
 				{{-- Show us a normal image... --}}
 				@else
-					<div class="featured-project"><img src="{{ URL::asset('images/' . $project->featured) }}" alt="{{ $project->name }}" width="960" height="400"></div>
+					<div class="featured-image-project"><img src="{{ URL::asset('images/' . $project->featured) }}" alt="{{ $project->name }}" width="960" height="400"></div>
 				@endif
 			@endif
 

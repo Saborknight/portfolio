@@ -31,13 +31,37 @@ h2.heading a {
 	}
 }
 
-.featured img {
-	width: 100%;
-	height: 20rem;
+p.heading {
+	color: $white-dark;
+}
+
+.featured {
+	iframe {
+		width: 100%;
+		height: 20rem;
+	}
+
+	img {
+		width: 100%;
+		height: 20rem;
+	}
 }
 
 .parse-area {
-	text-align: center;
+	@extend .markdown-body;
+	text-align: left;
+
+	a {
+		color: $brand-primary;
+	}
+
+	pre {
+		border: none;
+
+		code {
+			color: $white;
+		}
+	}
 }
 
 .tag-wrapper-project { @extend .tag-wrapper; }
@@ -45,7 +69,21 @@ h2.heading a {
 
 .heading-project { @extend .heading; }
 
-.featured-project { @extend .featured; }
+.featured-video-project {
+	@extend .featured;
+	position: relative;
+	padding-bottom: 56.5%;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.featured-image-project { @extend .featured; }
 .parse-area-project { @extend .parse-area; }
 
 @media (min-width: 768px) {
