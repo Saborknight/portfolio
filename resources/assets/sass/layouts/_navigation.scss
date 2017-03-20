@@ -243,16 +243,33 @@
 // Back/Forward Buttons //
 //////////////////////////
 
-.go-back-wrapper, .go-forward-wrapper {
+.go-back-wrapper, .go-forward-wrapper, .go-downward-wrapper {
 	position: absolute;
 	top: 0;
 	right: 0;
 	margin: 1em 0;
 	padding: 0 1.2em;
-	z-index: 4000;
+	z-index: 500;
 }
 
-.go-back, .go-forward {
+.something {
+	width:100%;
+}
+
+.go-downward-wrapper {
+	top: initial;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	opacity: 1;
+	transition: all 0.2s ease;
+}
+
+.fadeOut {
+	opacity: 0;
+}
+
+.go-back, .go-forward, .go-downward {
 	@extend .glyphicon;
 	padding: 0.7em;
 	border: 1px solid $brand-primary;
@@ -271,6 +288,24 @@
 
 .go-forward {
 	@extend .glyphicon-chevron-right;
+}
+
+.go-downward {
+	@extend .glyphicon-chevron-down;
+}
+
+.about-links-wrapper {
+	@extend .go-downward-wrapper;
+	position: static;
+}
+
+.about-links {
+	@extend .go-forward;
+	font-family: "Rajdhani", "Raleway", sans-serif;
+
+	&:before {
+		content: '';
+	}
 }
 
 ////////////////////////////
@@ -300,7 +335,7 @@
 	}
 
 	#timeline-wrapper, .timeline-header {
-		width: calc(2em + 40px);
+		width: calc(2em + 39px);
 	}
 
 	.hovered#timeline-wrapper {

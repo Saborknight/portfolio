@@ -1,6 +1,14 @@
+////////////////////
+// Projects Index //
+////////////////////
+
 .content {
 	padding-top: 3em;
 }
+
+/////////////////////
+// Projects Single //
+/////////////////////
 
 .header {
 	word-break: keep-all;
@@ -86,13 +94,27 @@ h4.heading {
 	}
 }
 
+//////////////
+// Homepage //
+//////////////
+.hero-logo {
+	@extend .container-fluid;
+}
+
+.wrapper-logo {
+	@extend .col-md-12;
+	@extend .text-center;
+}
+
 @media (min-width: 768px) {
 	.content {
 		padding-top: 4em;
 	}
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
+		width: 100%;
+		height: auto;
 }
 
 @media (min-width: 1400px) {

@@ -23,6 +23,11 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function() {
 	/**
+	 * Index Hero
+	 */
+	wholeScreen();
+
+	/**
 	 * Vimeo controllers
 	 */
 	if ($('.vimeoPlayer').length > 0) {
@@ -116,6 +121,26 @@ function shiftHeader() {
 
 		$j('.header-project').css('top', calc);
 	}
+}
+
+/**
+ * Figure out how tall it needs to be
+ * Then initiate the downward button
+ */
+function wholeScreen() {
+	var height = $j(window).height();
+	$j('.hero-logo').css('height', height);
+
+	$j('body').css('height', height * 2);
+
+	$j('.go-downward-wrapper a').click(function(e) {
+		e.preventDefault();
+
+
+		$j('.go-downward-wrapper').addClass('fadeOut');
+		var height = $(document).height();
+		$j('html, body').animate({ scrollTop: height }, 700);
+	});
 }
 
 /**
