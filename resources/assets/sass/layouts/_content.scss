@@ -1,5 +1,89 @@
 .content {
-	padding-top: 5em;
+	padding-top: 3em;
+}
+
+.header {
+	word-break: keep-all;
+	transition: all 0.5s ease;
+}
+
+.tag-wrapper {
+	display: block;
+}
+
+.tag {
+	display: inline-block;
+	margin-bottom: 0;
+	color: $brand-primary;
+}
+
+.separator {
+	color: $blue-light;
+}
+
+.heading {
+	color: $white-light;
+
+	a {
+		color: inherit;		
+
+		&:hover, &:active, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+h1.heading {
+	margin-top: 0.2em;
+}
+
+h2.heading a {
+	color: $white;
+
+	&:hover, &:active, &:focus {
+		color: $white-light;
+		text-decoration: none;
+	}
+}
+
+h4.heading {
+	color: $white-dark;
+}
+
+.featured {
+
+	iframe {
+		width: 100%;
+		height: 20rem;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.parse-area {
+	@extend .markdown-body;
+	padding-top: 1em;
+	text-align: left;
+	font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	th {
+		font-family: "Rajdhani";
+	}
+
+	a {
+		color: $brand-primary;
+	}
+
+	pre {
+		border: none;
+
+		code {
+			color: $white;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -7,3 +91,66 @@
 		padding-top: 4em;
 	}
 }
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1400px) {
+	.header {
+		position: absolute;
+		left: -10%;
+		top: 0;
+		width: 40%;
+		z-index: 100;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: -1em;
+			top: 0;
+			bottom: 0;
+			border: 1.5px solid $brand-primary;
+			border-radius: 4px;
+		}
+	}
+	.shift-left {
+		left: calc(-40% + 1px);
+	}
+
+	.featured-focus {
+		@extend .shift-left;
+	}
+
+	.featured iframe {
+		opacity: 0.4;
+		transition: all 0.5s ease;
+	}
+
+	.featured.youtubePlayer iframe {
+		opacity: 1;
+	}
+}
+
+.header-project { @extend .header; }
+.tag-wrapper-project { @extend .tag-wrapper; }
+.tag-project { @extend .tag }
+.separator-project { @extend .separator; }
+
+.heading-project { @extend .heading; }
+
+.featured-video-project {
+	@extend .featured;
+	position: relative;
+	padding-bottom: 56.5%;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.featured-image-project { @extend .featured; }
+.parse-area-project { @extend .parse-area; }
