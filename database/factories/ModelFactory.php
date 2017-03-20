@@ -40,6 +40,9 @@ $factory->define(App\Project::class, function (Faker\Generator $faker) {
 	$permalink = strtolower($permalink);
 
 	return [
+		'featured' => $faker->randomElement(
+			['featured1.jpg', 'featured2.jpg', 'featured3.jpg', 'featured4.jpg', 'featured5.jpg', 'https://player.vimeo.com/video/207505512', 'https://www.youtube.com/embed/tNYTtYmYlzA?rel=0&amp;showinfo=0?ecver=1']
+			),
 		'permalink' => $permalink,
 		'name' => $name,
 		'body' => $faker->paragraph,
