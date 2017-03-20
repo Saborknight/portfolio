@@ -18,8 +18,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			<h1>About</h1>
-			<h5>A little bit about me...</h5>
+			@php
+				$parse = new Parsedown();
+				$url = 'about.md';
+
+				try {
+					$about = File::get($url);
+				} catch (Illuminate\Filesystem\FileNotFoundException $exception) {
+					die ('Bad File');
+				}
+
+				echo $parse->text($about);
+			@endphp
 		</div>
 	</div>
 </div>
