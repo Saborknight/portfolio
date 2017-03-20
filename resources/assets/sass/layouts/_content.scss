@@ -2,6 +2,52 @@
 	padding-top: 5em;
 }
 
+.tag-wrapper {
+	display: block;
+}
+
+.tag {
+	color: $brand-primary;
+}
+
+.heading {
+	color: $white-light;
+
+	a {
+		color: inherit;		
+
+		&:hover, &:active, &:focus {
+			text-decoration: none;
+		}
+	}
+}
+
+h2.heading a {
+	color: $white;
+
+	&:hover, &:active, &:focus {
+		color: $white-light;
+		text-decoration: none;
+	}
+}
+
+.featured img {
+	width: 100%;
+	height: 20rem;
+}
+
+.parse-area {
+	text-align: center;
+}
+
+.tag-wrapper-project { @extend .tag-wrapper; }
+.tag-project { @extend .tag }
+
+.heading-project { @extend .heading; }
+
+.featured-project { @extend .featured; }
+.parse-area-project { @extend .parse-area; }
+
 @media (min-width: 768px) {
 	.content {
 		padding-top: 4em;
