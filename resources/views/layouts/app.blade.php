@@ -19,12 +19,13 @@
 			'csrfToken' => csrf_token(),
 		]) !!};
 	</script>
+	<script src="https://player.vimeo.com/api/player.js"></script>
 	@yield('header')
 </head>
 <body>
 	<div id="app">
 		{{-- Menu Sidebar --}}
-		<div id="menu-wrapper">
+		<nav id="menu-wrapper">
 			<ul class="menu-nav">
 				<li class="menu-brand">
 					<a href="{{ route('index') }}">
@@ -62,7 +63,7 @@
 					</li>
 				@endif
 			</ul>
-		</div>
+		</nav>
 		<button id="menu-toggle" type="button" class="drop-bars">
 			<span class="sr-only">Toggle Menu</span>
 			<span class="icon-bar"></span>

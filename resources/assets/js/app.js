@@ -23,6 +23,20 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function() {
 	/**
+	 * Vimeo controllers
+	 */
+	if ($('.vimeoPlayer').length > 0) {
+		vimeo();
+	}
+
+	/**
+	 * Youtube controllers
+	 */
+	// if ($('.youtubePlayer').length > 0) {
+	// 	onYouTubeIframeAPIReady();
+	// }
+
+	/**
 	 * Make sure sidebar (if exists) stretches to the full extent
 	 * of the la... I mean document
 	 */
@@ -73,4 +87,102 @@ $j(document).ready(function() {
 	$j('#timeline-wrapper').hover(function() {
 		$(this).toggleClass('hovered');
 	});
+
+	/**
+	 * Move header out of the way once there is indication that there is focus
+	 * on the feature
+	 */
+	$j('.featured-image-project, featured-video-project iframe').hover(function() {
+		$j('.header-project').toggleClass('shift-left');
+	});
+
+	/**
+	 * Calculate the top position to put the project single header group on
+	 * taking into account viewport width and feature height
+	 */
+	shiftHeader();
 });
+
+/**
+ * Calculates amount to shift header down
+ * @return void
+ */
+function shiftHeader() {
+	if ($j(window).width() >= 1400) {
+		var imageHeight = $j('.featured-image-project, .featured-video-project iframe').height();
+		var headerHeight = $j('.header-project').height();
+
+		var calc = (imageHeight * 0.25) - (headerHeight/2);
+
+		$j('.header-project').css('top', calc);
+	}
+}
+
+/**
+ * Sort Vimeo out
+ */
+function vimeo() {
+	var iframe = $j('.featured-video-project.vimeoPlayer iframe');
+	var player = new Vimeo.Player(iframe);
+
+	player.ready().then(function() {
+		shiftHeader();
+	});
+
+	player.on('play', function() {
+		$j('.header-project').addClass('featured-focus');
+		$j('.featured-video-project iframe').css('opacity', 1);
+	});
+
+	player.on('pause', function() {
+		$j('.header-project').removeClass('featured-focus');
+		$j('.featured-video-project iframe').css('opacity', 0.4);
+	});
+
+	player.on('ended', function() {
+		$j('.header-project').removeClass('featured-focus');
+		$j('.featured-video-project iframe').css('opacity', 0.4);
+	});
+
+	console.log($j('.tag-project').css('color'));
+
+	player.setColor($j('.tag-project').css('color')).then(function(color) {
+		console.log('Vimeo color set:', color);
+	});
+}
+
+/**
+ * Sort youtube out
+ */
+// var player;
+// function onYouTubeIframeAPIReady() {
+// 	console.log('We\'re live');
+// 	player = new YT.Player('player', {
+// 		events: {
+// 			onReady: onPlayerReady,
+// 			onStateChange: onPlayerStateChange
+// 		}
+// 	});
+// }
+
+// function onPlayerReady(event) {
+// 	shiftHeader();
+// }
+
+// function onPlayerStateChange(event) {
+// 	console.log('State:', event);
+// 	var state = event.data;
+// 	if (state === 0) {
+// 		// ended
+// 		$j('.header-project').removeClass('featured-focus');
+// 		$j('.featured-video-project iframe').css('opacity', 0.4);
+// 	} else if (status === 1) {
+// 		// playing
+// 		$j('.header-project').addClass('featured-focus');
+// 		$j('.featured-video-project iframe').css('opacity', 1);
+// 	} else if (status === 2) {
+// 		// paused
+// 		$j('.header-project').removeClass('featured-focus');
+// 		$j('.featured-video-project iframe').css('opacity', 0.4);
+// 	}
+// }
