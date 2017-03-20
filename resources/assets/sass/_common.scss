@@ -12,14 +12,39 @@ html, body {
 }
 
 body {
-	font-family: "Rajdhani", "Raleway", sans-serif;
+	font-family: "Raleway", sans-serif;
 	font-size: 16px;
 	background-image: url(../img/bg-texture.png);
 	background-size: 300px;
 }
 
 h1, h2, h3, h4, h5, h6 {
+	font-family: "Rajdhani", "Raleway", sans-serif;
 	color: $white-light;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.25em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.875em;
+}
+
+h6 {
+	font-size: 0.85em;
 }
 
 // In case doing stuff with JS, don't let the animations show

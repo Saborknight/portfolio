@@ -8,7 +8,7 @@
 				@if (count($project->categories))
 					@foreach ($project->categories as $category)
 						<a href="{{ \URL::route('projects', ['category' => $category->name]) }}">
-							<span class="tag-project" data-category-color="{{ $category->color }}">{{ ucwords($category->name) }}</span>
+							<h4 class="tag-project" data-category-color="{{ $category->color }}">{{ ucwords($category->name) }}</h4>
 						</a>
 					@endforeach
 				@endif
@@ -20,7 +20,7 @@
 				$sd = Carbon\Carbon::parse($project->start_date);
 				$ed = Carbon\Carbon::parse($project->end_date);
 			@endphp
-			<p class="heading-project">{{ $sd->format('F Y') }} - {{ $ed->format('F Y') }}</p>
+			<h4 class="heading-project">{{ $sd->format('F Y') }} - {{ $ed->format('F Y') }}</h4>
 
 			@if (count($project->featured))
 
