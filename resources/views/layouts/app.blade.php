@@ -96,8 +96,12 @@
 		@if (preg_match('/projects/', Request::url()) && count($timeline))
 			<aside id="timeline-wrapper">
 				<div class="timeline">
+					<h2 class="helper">Timeline</h2>
 					<ul class="timeline-list">
 						@foreach ($timeline as $year => $projects)
+							{{-- @if (array_search ($year, array_keys ($timeline)) == 0)
+								<span class="helper">Quick Browse</span>
+							@endif --}}
 							<li class="timeline-header"><h3>{{ substr($year, 2) }}</h3></li>
 							<li class="clearfix"></li>
 

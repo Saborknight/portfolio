@@ -197,7 +197,6 @@
 	float: right;
 	width: 100rem;
 	margin: 0;
-	padding-top: 3em;
 	overflow-y: visible;
 
 	.timeline-list {
@@ -237,6 +236,12 @@
 			border: 20px solid $brand-primary;
 		}
 	}
+}
+
+.helper {
+	font-family: "Rajdhani";
+	text-align: right;
+	margin-right: calc(2em + 39px);
 }
 
 //////////////////////////
