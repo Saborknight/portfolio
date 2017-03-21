@@ -24,11 +24,22 @@ class DatabaseSeeder extends Seeder
 			DB::table($table)->truncate();
 		}
 
-		$this->call(AuthorTableSeeder::class);
-		$this->call(CategoryTableSeeder::class);
-		$this->call(ClientTableSeeder::class);
-		$this->call(ProjectTableSeeder::class);
-		$this->call(ProjectFeedbackTableSeeder::class);
+		if (App::environment('local')) {
+
+			$this->call(AuthorTableSeeder::class);
+			$this->call(CategoryTableSeeder::class);
+			$this->call(ClientTableSeeder::class);
+			$this->call(ProjectTableSeeder::class);
+			$this->call(ProjectFeedbackTableSeeder::class);
+
+		} elseif (App::environment('production')) {
+
+			$this->call(ProdAuthorTableSeeder::class);
+			$this->call(ProdCategoryTableSeeder::class);
+			$this->call(ProdClientTableSeeder::class);
+			$this->call(ProdProjectTableSeeder::class);
+			$this->call(ProdProjectFeedbackTableSeeder::class);
+		}
 
 		Model::reguard();
 	}
