@@ -99,10 +99,15 @@
 							@endforeach
 						@endif --}}
 						<p>
-							@if (strlen($project->body) >= 200)
-								{{ trim (substr ($project->body, 0, 200), ". \t\n\r\0\x0B") . '...' }}
+							@php
+								$parse = new Parsedown();
+								$body = $parse->text($project->body);
+								$body = strip_tags($body);
+							@endphp
+							@if (strlen($body) >= 200)
+								{{ trim (substr ($body, 0, 200), ". \t\n\r\0\x0B") . '...' }}
 							@else
-								{{ substr ($project->body, 0, 200) }}
+								{{ substr ($body, 0, 200) }}
 							@endif
 						</p>
 					</div>
