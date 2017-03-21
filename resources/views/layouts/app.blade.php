@@ -47,9 +47,15 @@
 				@endphp
 
 				@foreach ($controller->getMenuItems() as $name => $url)
-					<li>
-						<a href="{{ $url }}">{{ ucwords($name) }}</a>
-					</li>
+					@if ($url === 'separator')
+						<li>
+							<hr class="{{ $name }}">
+						</li>
+					@else
+						<li>
+							<a href="{{ $url }}">{{ ucwords($name) }}</a>
+						</li>
+					@endif
 				@endforeach
 
 				@if (Auth::check())

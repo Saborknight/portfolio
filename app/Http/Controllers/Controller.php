@@ -14,7 +14,12 @@ class Controller extends BaseController
 	public function getMenuItems() {
 		$menuItems = [
 			'projects' => route('projects'),
-			'about' => route('about')
+			'about' => route('index'),
+			'separator',
+			'web CV' => 'http://saborknight.com/img/Anton_Brink_CV-Web.pdf',
+			'film CV' => 'http://saborknight.com/img/Anton_Brink_CV-Film.pdf',
+			'linkedIn' => 'https://www.linkedin.com/in/antonabrink',
+			'facebook blog' => 'https://www.facebook.com/Saborknight'
 		];
 
 		return $menuItems;
