@@ -125,9 +125,15 @@ $j(document).ready(function() {
 
 	/**
 	 * Calculate the top position to put the project single header group on
-	 * taking into account viewport width and feature height
+	 * taking into account viewport width and feature height and only do it
+	 * when the window is larger than 1400px
 	 */
 	shiftHeader();
+	$j(window).resize(function() {
+		if ($j(window).width() >= 1400) {
+			shiftHeader();
+		}
+	});
 });
 
 /**
