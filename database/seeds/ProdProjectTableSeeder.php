@@ -25,9 +25,9 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'Correct Translations - WordPress Site',
 			'body' => File::get($files[0]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2015, 10, 1),
-			'end_date' => Carbon::createFromDate(2016, 1, 28),
-			'featured' => \URL::asset('images/CTScreen.png'),
+			'start_date' => Carbon::createFromDate(2015, 10, 24),
+			'end_date' => Carbon::createFromDate(2016, 1, 30),
+			'featured' => 'CTScreen.png',
 			'permalink' => 'correct-translations'
 		]);
 
@@ -36,9 +36,9 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'Orangetime - WordPress Site',
 			'body' => File::get($files[1]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2015, 10, 1),
-			'end_date' => Carbon::createFromDate(2016, 1, 28),
-			'featured' => \URL::asset('images/OrangetimeScreen.png'),
+			'start_date' => Carbon::createFromDate(2017, 2, 13),
+			'end_date' => Carbon::createFromDate(2017, 3, 12),
+			'featured' => 'OrangetimeScreen.png',
 			'permalink' => 'orangetime'
 		]);
 
@@ -49,7 +49,7 @@ class ProdProjectTableSeeder extends Seeder
 			'state' => 'published',
 			'start_date' => Carbon::createFromDate(2015, 10, 1),
 			'end_date' => Carbon::createFromDate(2016, 1, 28),
-			'featured' => \URL::asset('images/NaturparkPurkersdorfScreen.png'),
+			'featured' => 'NaturparkPurkersdorfScreen.png',
 			'permalink' => 'naturpark-purkersdorf'
 		]);
 
@@ -60,7 +60,7 @@ class ProdProjectTableSeeder extends Seeder
 			'state' => 'published',
 			'start_date' => Carbon::createFromDate(2015, 10, 1),
 			'end_date' => Carbon::createFromDate(2016, 1, 28),
-			'featured' => \URL::asset('images/LEHSScreen.png'),
+			'featured' => 'LEHSScreen.png',
 			'permalink' => 'leeds-ethical-hacking-society'
 		]);
 
@@ -69,9 +69,9 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'Student Union - HTML E-mail',
 			'body' => File::get($files[4]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2015, 10, 1),
-			'end_date' => Carbon::createFromDate(2016, 1, 28),
-			'featured' => \URL::asset('images/ForumScreen.png'),
+			'start_date' => Carbon::createFromDate(2014, 10, 1),
+			'end_date' => Carbon::createFromDate(2014, 11, 26),
+			'featured' => 'SUEmailScreen.png',
 			'permalink' => 'student-union'
 		]);
 
@@ -80,9 +80,9 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'iWF Landing Page - Static Site',
 			'body' => File::get($files[5]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2015, 10, 1),
-			'end_date' => Carbon::createFromDate(2016, 1, 28),
-			'featured' => \URL::asset('images/iWF-2Screen.png'),
+			'start_date' => Carbon::createFromDate(2014, 12, 1),
+			'end_date' => Carbon::createFromDate(2015, 4, 1),
+			'featured' => 'iWF-2Screen.png',
 			'permalink' => 'iwf-langing-page'
 		]);
 
