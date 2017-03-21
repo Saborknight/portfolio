@@ -1,6 +1,26 @@
+////////////////////
+// Projects Index //
+////////////////////
+
 .content {
 	padding-top: 3em;
 }
+
+.project {
+
+}
+
+.project-featured {
+	.featured-video-project iframe {
+		opacity: 1;
+	}
+}
+
+.project-information {}
+
+/////////////////////
+// Projects Single //
+/////////////////////
 
 .header {
 	word-break: keep-all;
@@ -84,6 +104,22 @@ h4.heading {
 			color: $white;
 		}
 	}
+
+	h1, h2, h3, h4, h5, h6 {
+		border: none;
+	}
+}
+
+//////////////
+// Homepage //
+//////////////
+.hero-logo {
+	@extend .container-fluid;
+}
+
+.wrapper-logo {
+	@extend .col-md-12;
+	@extend .text-center;
 }
 
 @media (min-width: 768px) {
@@ -92,7 +128,17 @@ h4.heading {
 	}
 }
 
-@media (min-width: 992px) {
+@media (max-width: 600px) {
+	.wrapper-logo img {
+		width: 250px;
+		height: 300px;
+	}
+}
+
+@media (max-height: 500px) {
+	.wrapper-logo img {
+		height: 300px;
+	}
 }
 
 @media (min-width: 1400px) {
