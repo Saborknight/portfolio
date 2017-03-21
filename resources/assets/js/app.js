@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -40,8 +39,10 @@ $j(document).ready(function() {
 	/**
 	 * Vimeo controllers
 	 */
-	if ($('.vimeoPlayer').length > 0) {
-		vimeo();
+	if ($('.container').data('section') === 'projects-single') {
+		if ($('.vimeoPlayer').length > 0) {
+			vimeo();
+		}
 	}
 
 	/**
@@ -107,9 +108,11 @@ $j(document).ready(function() {
 	 * Move header out of the way once there is indication that there is focus
 	 * on the feature
 	 */
-	$j('.featured-image-project, featured-video-project iframe').hover(function() {
-		$j('.header-project').toggleClass('shift-left');
-	});
+	if ($('.container').data('section') === 'projects-single') {
+		$j('.featured-image-project, featured-video-project iframe').hover(function() {
+			$j('.header-project').toggleClass('shift-left');
+		});
+	}
 
 	/**
 	 * Calculate the top position to put the project single header group on
