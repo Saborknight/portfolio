@@ -34,7 +34,16 @@ $j(document).ready(function() {
 	/**
 	 * Index Hero
 	 */
+	$j('.go-downward-wrapper a').click(function(e) {
+		e.preventDefault();
+
+		scrollToElement('.parse-area');
+	});
 	wholeScreen();
+
+	$j(window).resize(function() {
+		wholeScreen();
+	});
 
 	/**
 	 * Vimeo controllers
@@ -145,15 +154,18 @@ function wholeScreen() {
 	$j('.hero-logo').css('height', height);
 
 	$j('body').css('height', height * 2);
+}
 
-	$j('.go-downward-wrapper a').click(function(e) {
-		e.preventDefault();
-
-
-		$j('.go-downward-wrapper').addClass('fadeOut');
-		var height = $(document).height();
-		$j('html, body').animate({ scrollTop: height }, 700);
-	});
+/**
+ * Executes scroll animation
+ * @param  {string} $element target element to scroll to
+ * @return {void}          scrolls to the target element
+ */
+function scrollToElement($element) {
+	$j('.go-downward-wrapper').addClass('fadeOut');
+	// var height = $(document).height();
+	var height = $j($element).offset().top;
+	$j('html, body').animate({ scrollTop: height }, 700);
 }
 
 /**
