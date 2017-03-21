@@ -128,7 +128,17 @@ h4.heading {
 	}
 }
 
-@media (max-width: 992px) {
+@media (max-width: 600px) {
+	.wrapper-logo img {
+		width: 250px;
+		height: 300px;
+	}
+}
+
+@media (max-height: 500px) {
+	.wrapper-logo img {
+		height: 300px;
+	}
 }
 
 @media (min-width: 1400px) {

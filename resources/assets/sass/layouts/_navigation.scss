@@ -132,7 +132,7 @@
 
 /* Toggle button */
 #menu-toggle {
-	position: absolute;
+	position: fixed;
 	left: 0;
 	margin: 8px 0;
 	padding: 9px 18px;
@@ -332,7 +332,7 @@
 	}
 
 	.toggled#menu-wrapper {
-		width: 25%;
+		width: 40%;
 	}
 
 	#menu-toggle {
@@ -340,7 +340,7 @@
 
 		&.move-right {
 			left: 95%;
-			left: calc(25% - 66px);
+			left: calc(40% - 66px);
 		}
 	}
 
@@ -358,6 +358,21 @@
 
 	#timeline-wrapper {
 		display: block;
+	}
+}
+
+@media (min-width: 1200px) {
+	.toggled#menu-wrapper {
+		width: 25%;
+	}
+
+	#menu-toggle {
+		position: fixed;
+
+		&.move-right {
+			left: 95%;
+			left: calc(25% - 66px);
+		}
 	}
 }
 
