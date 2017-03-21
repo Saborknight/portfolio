@@ -279,6 +279,7 @@
 	&:hover, &:active, &:focus {
 		background-color: $brand-primary;
 		color: $grey;
+		text-decoration: none;
 	}
 }
 
@@ -294,17 +295,30 @@
 	@extend .glyphicon-chevron-down;
 }
 
-.about-links-wrapper {
+.button-wrapper {
 	@extend .go-downward-wrapper;
 	position: static;
+
+	a:hover, a:active, a:focus {
+		text-decoration: none;
+	}
 }
 
-.about-links {
+.button {
 	@extend .go-forward;
 	font-family: "Rajdhani", "Raleway", sans-serif;
+	padding: 0.5em;
 
 	&:before {
 		content: '';
+	}
+}
+
+.hire-me {
+	position: absolute;
+
+	.button {
+		display: block;
 	}
 }
 

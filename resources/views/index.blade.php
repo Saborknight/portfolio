@@ -17,7 +17,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12">
+		<div class="col-sm-12 parse-area">
 			@php
 				$parse = new Parsedown();
 				$url = 'about.md';
@@ -34,9 +34,9 @@
 	</div>
 </div>
 
-<div class="about-links-wrapper">
+<h1 class="button-wrapper">
 	<a href="{{ \URL::route('projects') }}">
-		<span class="about-links">Projects</span>
+		<span class="button">My Projects</span>
 	</a>
-</div>
+</h1>
 @endsection
