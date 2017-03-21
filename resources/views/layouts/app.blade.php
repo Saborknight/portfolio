@@ -63,6 +63,7 @@
 					</li>
 				@endif
 			</ul>
+			<h1 class="button-wrapper hire-me"><a href="mailto:info@saborknight.com?subject=I want you!&body=Tell me what it is you require"><span class="button">Hire Me!</span></a></h1>
 		</nav>
 		<button id="menu-toggle" type="button" class="drop-bars">
 			<span class="sr-only">Toggle Menu</span>
@@ -70,10 +71,6 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-
-		{{-- <div class="go-back-wrapper">
-			<a href="{{ URL::previous() }}"><i class="go-back"></i></a>
-		</div> --}}
 
 		<main class="content">
 			@yield('content')

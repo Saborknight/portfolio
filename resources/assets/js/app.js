@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -23,10 +22,27 @@ var $j = jQuery.noConflict();
 
 $j(document).ready(function() {
 	/**
+	 * Index Scroll position button re-enabler
+	 */
+	$(document).on('scroll', function() {
+		if($(this).scrollTop()>=$('.go-downward-wrapper').position().top){
+
+			$j('.go-downward-wrapper').removeClass('fadeOut');
+		}
+	});
+
+	/**
+	 * Index Hero
+	 */
+	wholeScreen();
+
+	/**
 	 * Vimeo controllers
 	 */
-	if ($('.vimeoPlayer').length > 0) {
-		vimeo();
+	if ($('.container').data('section') === 'projects-single') {
+		if ($('.vimeoPlayer').length > 0) {
+			vimeo();
+		}
 	}
 
 	/**
@@ -41,10 +57,10 @@ $j(document).ready(function() {
 	 * of the la... I mean document
 	 */
 	if ($('#timeline-wrapper').length > 0) {
-		var height = $j(document).height();
+		var doc = $j(document).height();
 		var extension = parseFloat($j('body').css('font-size')) * 3;
 
-		var height = height + extension;
+		var height = doc + extension;
 
 		$('#timeline-wrapper, .timeline').addClass('no-transition');
 
@@ -92,9 +108,11 @@ $j(document).ready(function() {
 	 * Move header out of the way once there is indication that there is focus
 	 * on the feature
 	 */
-	$j('.featured-image-project, featured-video-project iframe').hover(function() {
-		$j('.header-project').toggleClass('shift-left');
-	});
+	if ($('.container').data('section') === 'projects-single') {
+		$j('.featured-image-project, featured-video-project iframe').hover(function() {
+			$j('.header-project').toggleClass('shift-left');
+		});
+	}
 
 	/**
 	 * Calculate the top position to put the project single header group on
@@ -116,6 +134,26 @@ function shiftHeader() {
 
 		$j('.header-project').css('top', calc);
 	}
+}
+
+/**
+ * Figure out how tall it needs to be
+ * Then initiate the downward button
+ */
+function wholeScreen() {
+	var height = $j(window).height();
+	$j('.hero-logo').css('height', height);
+
+	$j('body').css('height', height * 2);
+
+	$j('.go-downward-wrapper a').click(function(e) {
+		e.preventDefault();
+
+
+		$j('.go-downward-wrapper').addClass('fadeOut');
+		var height = $(document).height();
+		$j('html, body').animate({ scrollTop: height }, 700);
+	});
 }
 
 /**
