@@ -1,5 +1,4 @@
-<p align="center"><a href="//brink.saborknight.com"><img src="http://arendbrink.com/assets/brink-logo-light.png"></p>
-<h1 align="center">Brink</h1>
+<p align="center"><a href="//brink.saborknight.com"><img src="http://arendbrink.com/assets/brink-logo-light.png"></a></p>
 <p align="center">Professional Portfolio</p>
 
 ## What is this?
