@@ -24,12 +24,14 @@ $j(document).ready(function() {
 	/**
 	 * Index Scroll position button re-enabler
 	 */
-	$(document).on('scroll', function() {
-		if($(this).scrollTop()>=$('.go-downward-wrapper').position().top){
-
-			$j('.go-downward-wrapper').removeClass('fadeOut');
-		}
-	});
+	if ($('.go-downward-wrapper').length) {
+		$(document).on('scroll', function() {
+			if($(this).scrollTop() >= $('.go-downward-wrapper').position().top){
+	
+				$j('.go-downward-wrapper').removeClass('fadeOut');
+			}
+		});
+	}
 
 	/**
 	 * Index Hero
@@ -66,18 +68,17 @@ $j(document).ready(function() {
 	 * of the la... I mean document
 	 */
 	if ($('#timeline-wrapper').length > 0) {
-		var doc = $j(document).height();
-		var extension = parseFloat($j('body').css('font-size')) * 3;
+		checkTimeline();
 
-		var height = doc + extension;
+		$j(document).on('scroll', function() {
+			var elementBottom = $j('#timeline-wrapper').offset().top + $j('#timeline-wrapper').height();
+			var windowBottom = $j(window).height();
+			var windowTop = $j(window).scrollTop();
 
-		$('#timeline-wrapper, .timeline').addClass('no-transition');
-
-		$('#timeline-wrapper, .timeline').css('height', height);
-
-		$('#timeline-wrapper, .timeline').removeClass('no-transition');
-
-		console.log('Timeline found!', height, extension);
+			if (elementBottom < (windowBottom + windowTop)) {
+				checkTimeline();
+			}
+		});
 	}
 
 	/**
@@ -205,6 +206,21 @@ function vimeo() {
 	player.setColor($j('.tag-project').css('color')).then(function(color) {
 		console.log('Vimeo color set:', color);
 	});
+}
+
+function checkTimeline() {
+	var doc = $j(document).height();
+	var extension = parseFloat($j('body').css('font-size')) * 3;
+
+	var height = doc + extension;
+
+	$('#timeline-wrapper, .timeline').addClass('no-transition');
+
+	$('#timeline-wrapper, .timeline').css('height', height);
+
+	$('#timeline-wrapper, .timeline').removeClass('no-transition');
+
+	console.log('Timeline changed!', height, extension);
 }
 
 /**
