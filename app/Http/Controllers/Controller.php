@@ -16,8 +16,8 @@ class Controller extends BaseController
 			'projects' => route('projects'),
 			'about' => route('index'),
 			'separator',
-			'web CV' => 'http://saborknight.com/img/Anton_Brink_CV-Web.pdf',
-			'film CV' => 'http://saborknight.com/img/Anton_Brink_CV-Film.pdf',
+			'Curriculum Vitae' => 'http://saborknight.com/img/Anton_Brink_CV-Web.pdf',
+			// 'film CV' => 'http://saborknight.com/img/Anton_Brink_CV-Film.pdf',
 			'linkedIn' => 'https://www.linkedin.com/in/antonabrink',
 			'facebook blog' => 'https://www.facebook.com/Saborknight'
 		];
