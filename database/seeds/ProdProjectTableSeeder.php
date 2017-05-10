@@ -25,8 +25,8 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'Correct Translations - WordPress Site',
 			'body' => File::get($files[0]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2015, 10, 24),
-			'end_date' => Carbon::createFromDate(2016, 1, 30),
+			'start_date' => Carbon::createFromDate(2017, 2, 15),
+			'end_date' => Carbon::createFromDate(2017, 3, 7),
 			'featured' => 'CTScreen.png',
 			'permalink' => 'correct-translations'
 		]);
@@ -36,8 +36,8 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'Orangetime - WordPress Site',
 			'body' => File::get($files[1]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2017, 2, 13),
-			'end_date' => Carbon::createFromDate(2017, 3, 12),
+			'start_date' => Carbon::createFromDate(2016, 10, 25),
+			'end_date' => Carbon::createFromDate(2017, 2, 6),
 			'featured' => 'OrangetimeScreen.png',
 			'permalink' => 'orangetime'
 		]);
@@ -58,8 +58,8 @@ class ProdProjectTableSeeder extends Seeder
 			'name' => 'Leeds Ethical Hacking Society - Static Site',
 			'body' => File::get($files[3]),
 			'state' => 'published',
-			'start_date' => Carbon::createFromDate(2015, 10, 1),
-			'end_date' => Carbon::createFromDate(2016, 1, 28),
+			'start_date' => Carbon::createFromDate(2016, 4, 5),
+			'end_date' => Carbon::createFromDate(2016, 4, 11),
 			'featured' => 'LEHSScreen.png',
 			'permalink' => 'leeds-ethical-hacking-society'
 		]);
@@ -83,7 +83,7 @@ class ProdProjectTableSeeder extends Seeder
 			'start_date' => Carbon::createFromDate(2014, 12, 1),
 			'end_date' => Carbon::createFromDate(2015, 4, 1),
 			'featured' => 'iWF-2Screen.png',
-			'permalink' => 'iwf-langing-page'
+			'permalink' => 'iwf-landing-page'
 		]);
 
 		$category_project = [

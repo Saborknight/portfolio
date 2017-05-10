@@ -117,7 +117,12 @@
 												{{ '...' }}
 											@endif
 										</span>
-										<i class="timeline-category" style="border-color: {{ $project['color'] }};"></i>
+
+										@php
+											$date = DateTime::createFromFormat('Y-m-d', $project['start_date']);
+										@endphp
+										<span class="month">{{ $date->format('M') }}</span>
+										{{-- <i class="timeline-category" style="border-color: {{ $project['color'] }};"></i> --}}
 									</a>
 								</li>
 								<li class="clearfix"></li>
