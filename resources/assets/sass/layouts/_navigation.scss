@@ -236,6 +236,15 @@
 			border: 20px solid $brand-primary;
 		}
 	}
+
+	span.month {
+		@extend .dim;
+		display: inline-block;
+		width: calc(2em + 39px);
+		text-align: left;
+		transform: none;
+		margin: 0;
+	}
 }
 
 .helper {
