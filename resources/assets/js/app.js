@@ -111,7 +111,9 @@ $j(document).ready(function() {
 	 * Toggle the sidebar menu on the right on hover
 	 */
 	$j('#timeline-wrapper').hover(function() {
-		$j(this).toggleClass('hovered');
+		$j(this).addClass('hovered');
+	}, function() {
+		$j(this).removeClass('hovered');
 	});
 
 	/**
@@ -120,7 +122,9 @@ $j(document).ready(function() {
 	 */
 	if ($j('.container').data('section') === 'projects-single') {
 		$j('.featured-image-project, featured-video-project iframe').hover(function() {
-			$j('.header-project').toggleClass('shift-left');
+			$j('.header-project').addClass('shift-left');
+		}, function() {
+			$j('.header-project').removeClass('shift-left');
 		});
 	}
 
