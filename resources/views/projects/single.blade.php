@@ -34,7 +34,7 @@
 				<h4 class="heading-project">{{ $sd->format('F Y') }} - {{ $ed->format('F Y') }}</h4>
 			</header>
 
-			@if (count($featured = $project->featured))
+			@if ($featured = $project->featured)
 
 				{{-- Show us Vimeo! --}}
 				@if (preg_match(

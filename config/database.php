@@ -49,7 +49,7 @@ return [
 			'charset' => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix' => 'pf_',
-			'strict' => true,
+			'strict' => false,
 			'engine' => null,
 		],
 
