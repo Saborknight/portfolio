@@ -119,6 +119,16 @@ class ProdProjectTableSeeder extends Seeder
 			'permalink' => 'three-counties-water'
 		]);
 
+		// 10
+		Project::create([
+			'name' => '2BNB Extras - Arma 3',
+			'body' => File::get($files[9]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2019, 2, 12),
+			'featured' => '2bnbExtrasScreen.png',
+			'permalink' => '2bnb-extras'
+		]);
+
 		$category_project = [
 			1 => [3],
 			2 => [3],
@@ -128,7 +138,8 @@ class ProdProjectTableSeeder extends Seeder
 			6 => [3],
 			7 => [3],
 			8 => [3],
-			9 => [3]
+			9 => [3],
+			10 => [4]
 		];
 
 		// Now run the attachments and modifications
@@ -169,12 +180,8 @@ class ProdProjectTableSeeder extends Seeder
 	 * @return void           sets data in the database
 	 */
 	public function attachCategories($projects, $list) {
-		// $categories = App\Category::all()->pluck('id');
-
 		foreach ($projects as $project) {
-			$project_id = $project->pluck('id')->toArray();
-
-			$project->categories()->attach($list[$project_id[0]]);
+			$project->categories()->attach($list[$project->id]);
 		}
 	}
 
