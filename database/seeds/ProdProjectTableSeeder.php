@@ -129,6 +129,17 @@ class ProdProjectTableSeeder extends Seeder
 			'permalink' => '2bnb-extras'
 		]);
 
+		// 11
+		Project::create([
+			'name' => '9Liners & Notepad - Arma 3',
+			'body' => File::get($files[10]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2017, 12, 10),
+			'end_date' => Carbon::createFromDate(2018, 12, 12),
+			'featured' => '9LinersAndNotepadScreen.png',
+			'permalink' => '9liners-and-notepad'
+		]);
+
 		$category_project = [
 			1 => [3],
 			2 => [3],
@@ -139,7 +150,8 @@ class ProdProjectTableSeeder extends Seeder
 			7 => [3],
 			8 => [3],
 			9 => [3],
-			10 => [4]
+			10 => [4],
+			11 => [4]
 		];
 
 		// Now run the attachments and modifications
