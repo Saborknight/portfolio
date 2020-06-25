@@ -36,10 +36,8 @@ $j(document).ready(function() {
 	/**
 	 * Index Hero
 	 */
-	$j('.go-downward-wrapper a').click(function(e) {
-		e.preventDefault();
-
-		scrollToElement('.parse-area');
+	$j('a[href$=about]').click(function(e) {
+		scrollToElement('#about');
 	});
 	wholeScreen();
 

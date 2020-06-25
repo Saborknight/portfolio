@@ -14,7 +14,7 @@ class Controller extends BaseController
 	public function getMenuItems() {
 		$menuItems = [
 			'projects' => route('projects'),
-			'about' => route('index'),
+			'about' => route('index') . '#about',
 			'separator',
 			'Curriculum Vitae' => 'http://saborknight.com/img/Anton_Brink_CV-Web.pdf',
 			// 'film CV' => 'http://saborknight.com/img/Anton_Brink_CV-Film.pdf',
