@@ -27,11 +27,7 @@
 
 				<h1 class="heading-project">{{ $project->name }}</h1>
 				<h2 class="heading-project"><a href="{{ \URL::route('about') }}">{{ $project->authors()->first()->name }}</a></h2>
-				@php
-					$sd = Carbon\Carbon::parse($project->start_date);
-					$ed = Carbon\Carbon::parse($project->end_date);
-				@endphp
-				<h4 class="heading-project">{{ $sd->format('F Y') }} - {{ $ed->format('F Y') }}</h4>
+				<h4 class="heading-project">{{ $project->start_date->format('F Y') }} - {{ $project->end_date ? $project->end_date->format('F Y') : 'On-going' }}</h4>
 			</header>
 
 			@if ($featured = $project->featured)
