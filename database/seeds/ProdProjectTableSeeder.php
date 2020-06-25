@@ -108,6 +108,17 @@ class ProdProjectTableSeeder extends Seeder
 			'permalink' => 'este-couture'
 		]);
 
+		// 9
+		Project::create([
+			'name' => 'Three Counties Water - WordPress Site',
+			'body' => File::get($files[8]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2017, 6, 1),
+			'end_date' => Carbon::createFromDate(2017, 6, 30),
+			'featured' => '3cwScreen.png',
+			'permalink' => 'three-counties-water'
+		]);
+
 		$category_project = [
 			1 => [3],
 			2 => [3],
@@ -116,7 +127,8 @@ class ProdProjectTableSeeder extends Seeder
 			5 => [3],
 			6 => [3],
 			7 => [3],
-			8 => [3]
+			8 => [3],
+			9 => [3]
 		];
 
 		// Now run the attachments and modifications
