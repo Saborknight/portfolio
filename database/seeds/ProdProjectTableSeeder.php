@@ -86,13 +86,25 @@ class ProdProjectTableSeeder extends Seeder
 			'permalink' => 'iwf-landing-page'
 		]);
 
+		// 7
+		Project::create([
+			'name' => 'Betr - WordPress Site',
+			'body' => File::get($files[6]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2018, 6, 13),
+			'end_date' => Carbon::createFromDate(2018, 10, 29),
+			'featured' => 'BetrScreen.png',
+			'permalink' => 'betr'
+		]);
+
 		$category_project = [
 			1 => [3],
 			2 => [3],
 			3 => [3],
 			4 => [3],
 			5 => [3],
-			6 => [3]
+			6 => [3],
+			7 => [3]
 		];
 
 		// Now run the attachments and modifications
