@@ -24,5 +24,9 @@ class ProdCategoryTableSeeder extends Seeder
 			'name' => 'web development',
 			'color' => '#89401C'
 		]);
+		Category::create([
+			'name' => 'videogame modding',
+			'color' => '#4834CA'
+		]);
 	}
 }

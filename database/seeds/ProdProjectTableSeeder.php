@@ -86,13 +86,72 @@ class ProdProjectTableSeeder extends Seeder
 			'permalink' => 'iwf-landing-page'
 		]);
 
+		// 7
+		Project::create([
+			'name' => 'Betr - WordPress Site',
+			'body' => File::get($files[6]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2018, 6, 13),
+			'end_date' => Carbon::createFromDate(2018, 10, 29),
+			'featured' => 'BetrScreen.png',
+			'permalink' => 'betr'
+		]);
+
+		// 8
+		Project::create([
+			'name' => 'Este Couture - WordPress Site',
+			'body' => File::get($files[7]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2017, 4, 1),
+			'end_date' => Carbon::createFromDate(2017, 6, 30),
+			'featured' => 'EsteScreen.png',
+			'permalink' => 'este-couture'
+		]);
+
+		// 9
+		Project::create([
+			'name' => 'Three Counties Water - WordPress Site',
+			'body' => File::get($files[8]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2017, 6, 1),
+			'end_date' => Carbon::createFromDate(2017, 6, 30),
+			'featured' => '3cwScreen.png',
+			'permalink' => 'three-counties-water'
+		]);
+
+		// 10
+		Project::create([
+			'name' => '2BNB Extras - Arma 3',
+			'body' => File::get($files[9]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2019, 2, 12),
+			'featured' => '2bnbExtrasScreen.png',
+			'permalink' => '2bnb-extras'
+		]);
+
+		// 11
+		Project::create([
+			'name' => '9Liners & Notepad - Arma 3',
+			'body' => File::get($files[10]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2017, 12, 10),
+			'end_date' => Carbon::createFromDate(2018, 12, 12),
+			'featured' => '9LinersAndNotepadScreen.png',
+			'permalink' => '9liners-and-notepad'
+		]);
+
 		$category_project = [
 			1 => [3],
 			2 => [3],
 			3 => [3],
 			4 => [3],
 			5 => [3],
-			6 => [3]
+			6 => [3],
+			7 => [3],
+			8 => [3],
+			9 => [3],
+			10 => [4],
+			11 => [4]
 		];
 
 		// Now run the attachments and modifications
@@ -133,12 +192,8 @@ class ProdProjectTableSeeder extends Seeder
 	 * @return void           sets data in the database
 	 */
 	public function attachCategories($projects, $list) {
-		// $categories = App\Category::all()->pluck('id');
-
 		foreach ($projects as $project) {
-			$project_id = $project->pluck('id')->toArray();
-
-			$project->categories()->attach($list[$project_id[0]]);
+			$project->categories()->attach($list[$project->id]);
 		}
 	}
 

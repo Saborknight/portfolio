@@ -13,7 +13,7 @@
 			<div class="row project">
 				<div class="col-xs-12 col-sm-6">
 					<div class="project-featured">
-						@if (count($featured = $project->featured))
+						@if ($featured = $project->featured)
 
 							{{-- Show us Vimeo! --}}
 							@if (preg_match(

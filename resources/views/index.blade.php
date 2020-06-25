@@ -10,14 +10,14 @@
 </div>
 
 <div class="go-downward-wrapper">
-	<a href="#">
+	<a href="#about">
 		<i class="go-downward"></i>
 	</a>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12 parse-area">
+		<div id="about" class="col-sm-12 parse-area">
 			@php
 				$parse = new Parsedown();
 				$url = 'about.md';
