@@ -97,6 +97,17 @@ class ProdProjectTableSeeder extends Seeder
 			'permalink' => 'betr'
 		]);
 
+		// 8
+		Project::create([
+			'name' => 'Este Couture - WordPress Site',
+			'body' => File::get($files[7]),
+			'state' => 'published',
+			'start_date' => Carbon::createFromDate(2017, 4, 1),
+			'end_date' => Carbon::createFromDate(2017, 6, 30),
+			'featured' => 'EsteScreen.png',
+			'permalink' => 'este-couture'
+		]);
+
 		$category_project = [
 			1 => [3],
 			2 => [3],
@@ -104,7 +115,8 @@ class ProdProjectTableSeeder extends Seeder
 			4 => [3],
 			5 => [3],
 			6 => [3],
-			7 => [3]
+			7 => [3],
+			8 => [3]
 		];
 
 		// Now run the attachments and modifications
